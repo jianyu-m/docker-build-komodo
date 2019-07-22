@@ -1,0 +1,14 @@
+diff --git a/verified/subdir.mk b/verified/subdir.mk
+index ead5954..93e4a30 100644
+--- a/verified/subdir.mk
++++ b/verified/subdir.mk
+@@ -1,6 +1,6 @@
+-DAFNYTIMELIMIT ?= 90
++DAFNYTIMELIMIT ?= 1000
+ VALEDIRECT ?= 1
+-DAFNYFLAGS = /trace /errorTrace:0 /timeLimit:$(DAFNYTIMELIMIT) \
++DAFNYFLAGS =/noVerify /trace /errorTrace:0 /timeLimit:$(DAFNYTIMELIMIT) \
+     /ironDafny /allocated:1 /induction:1 $(EXTRADAFNYFLAGS) \
+     $(call mkdafnyflags,$(notdir $(*))) \
+     $(if $(DAFNYPROC),/proc:"$(DAFNYPROC)")
+
